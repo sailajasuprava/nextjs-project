@@ -32,7 +32,7 @@ function CartProvider({ children }) {
   const addOrUpdateCart = async (pizzaId, quantity = 1) => {
     try {
       const res = await axios.post(`/cart`, {
-        userId: auth._id,
+        userId: auth?._id,
         pizzaId,
         quantity,
       });

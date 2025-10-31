@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { useRouter } from "next/navigation";
 import BackButton from "../_components/BackButton";
+import EmptyCart from "../_components/EmptyCart";
 
 export default function CartPage() {
   const router = useRouter();
@@ -14,29 +14,7 @@ export default function CartPage() {
   const tax = Math.round(subtotal * 0.05);
   const total = subtotal + deliveryFee + tax;
 
-  if (cart.length === 0) {
-    return (
-      <main className="min-h-screen bg-linear-to-b from-yellow-50 to-white">
-        <BackButton />
-
-        <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-          <div className="text-7xl mb-6">🛒</div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">
-            Your cart is empty
-          </h1>
-          <p className="text-gray-600 text-lg mb-8">
-            Add some delicious pizzas to get started!
-          </p>
-          <Link
-            href="/"
-            className="inline-block bg-linear-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Continue Shopping
-          </Link>
-        </div>
-      </main>
-    );
-  }
+  if (cart.length === 0) return <EmptyCart />;
 
   return (
     <main className="min-h-screen bg-linear-to-b from-yellow-50 to-white">
