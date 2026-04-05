@@ -8,10 +8,15 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      // {
+      //   protocol: "http",
+      //   hostname: "localhost",
+      //   port: "8000",
+      //   pathname: "/uploads/**",
+      // },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "8000",
+        protocol: "https",
+        hostname: "nextjs-project-kappa-tawny.vercel.app",
         pathname: "/uploads/**",
       },
     ],
