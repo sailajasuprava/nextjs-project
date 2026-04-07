@@ -20,7 +20,7 @@ function CartProvider({ children }) {
     try {
       setLoading(true);
       const res = await axios.get(`/cart/${auth?._id}`);
-      setCart(res.data.data.cartItems);
+      setCart(res.data.data?.cartItems);
     } catch (err) {
       console.error(err);
       setCart(null);
@@ -69,9 +69,9 @@ function CartProvider({ children }) {
   };
 
   const subtotal = cart
-    ? cart.reduce(
+    ? cart?.reduce(
         (sum, item) => sum + (item.pizzaId.price || 0) * item.quantity,
-        0
+        0,
       )
     : 0;
 

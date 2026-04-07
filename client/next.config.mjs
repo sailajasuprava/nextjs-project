@@ -8,12 +8,19 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-      // {
-      //   protocol: "http",
-      //   hostname: "localhost",
-      //   port: "8000",
-      //   pathname: "/uploads/**",
-      // },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "/**",
+        // pathname: "/dr0gkznfz/image/upload/v1775543208/pizzas/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8000",
+        pathname: "/uploads/**",
+      },
       {
         protocol: "https",
         hostname: "nextjs-project-kappa-tawny.vercel.app",
