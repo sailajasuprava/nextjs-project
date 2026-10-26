@@ -22,7 +22,7 @@ async function Home() {
         </p>
 
         <button className="bg-[#FACC15] text-black px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#EAB308] transition">
-          SHOP NOW
+          SHOP NOW!
         </button>
       </section>
 
